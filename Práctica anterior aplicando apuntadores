@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void intercambiar(int* a, int* b) {
+    int temporal = *a;
+    *a = *b;
+    *b = temporal;
+}
+
+int main() {
+    int numero1, numero2;
+
+    cout << "Ingresa el primer numero: ";
+    cin >> numero1;
+
+    cout << "Ingresa el segundo numero: ";
+    cin >> numero2;
+
+    cout << "\nAntes del intercambio:\n";
+    cout << numero1 << " y " << numero2 << endl;
+
+    intercambiar(&numero1, &numero2);
+
+    cout << "\nDespues del intercambio:\n";
+    cout << numero1 << " y " << numero2 << endl;
+
+    return 0;
+}
