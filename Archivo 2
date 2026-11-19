@@ -1,0 +1,24 @@
+#include <iostream>
+#include "compuertas.h"
+using namespace std;
+
+int main() {
+    int a, b;
+
+    cout << "Ingresa dos valores logicos (0 o 1): ";
+    cin >> a >> b;
+
+    if ((a != 0 && a != 1) ||
+        (b != 0 && b != 1)) {
+        cout << "Solo se permite 0 o 1.\n";
+        return 0;
+    }
+
+    cout << "AND: " << AND(a, b) << endl;
+    cout << "OR: " << OR(a, b) << endl;
+    cout << "NOT A: " << NOT(a) << endl;
+    cout << "NOT B: " << NOT(b) << endl;
+    cout << "XOR: " << XOR(a, b) << endl;
+
+    return 0;
+}
