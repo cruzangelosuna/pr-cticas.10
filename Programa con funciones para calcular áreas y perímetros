@@ -1,0 +1,81 @@
+#include <iostream>
+using namespace std;
+
+const double PI = 3.141592653589793;
+
+double areaCuadrado(double lado) {
+    return lado * lado;
+}
+
+double perimetroCuadrado(double lado) {
+    return 4 * lado;
+}
+
+double areaRectangulo(double base, double altura) {
+    return base * altura;
+}
+
+double perimetroRectangulo(double base, double altura) {
+    return 2 * (base + altura);
+}
+
+double areaCirculo(double radio) {
+    return PI * radio * radio;
+}
+
+double perimetroCirculo(double radio) {
+    return 2 * PI * radio;
+}
+
+int main() {
+    int opcion;
+    double x, y;
+
+    cout << "1. Cuadrado\n";
+    cout << "2. Rectangulo\n";
+    cout << "3. Circulo\n";
+    cout << "Elige una figura: ";
+    cin >> opcion;
+
+    if (opcion == 1) {
+        cout << "Ingresa el lado: ";
+        cin >> x;
+
+        if (x <= 0) {
+            cout << "Medida no valida.\n";
+            return 0;
+        }
+
+        cout << "Area: " << areaCuadrado(x) << endl;
+        cout << "Perimetro: " << perimetroCuadrado(x) << endl;
+
+    } else if (opcion == 2) {
+        cout << "Ingresa base y altura: ";
+        cin >> x >> y;
+
+        if (x <= 0 || y <= 0) {
+            cout << "Medidas no validas.\n";
+            return 0;
+        }
+
+        cout << "Area: " << areaRectangulo(x, y) << endl;
+        cout << "Perimetro: " << perimetroRectangulo(x, y) << endl;
+
+    } else if (opcion == 3) {
+        cout << "Ingresa el radio: ";
+        cin >> x;
+
+        if (x <= 0) {
+            cout << "Medida no valida.\n";
+            return 0;
+        }
+
+        cout << "Area: " << areaCirculo(x) << endl;
+        cout << "Perimetro: " << perimetroCirculo(x) << endl;
+
+    } else {
+        cout << "Opcion no valida.\n";
+    }
+
+    return 0;
+}
