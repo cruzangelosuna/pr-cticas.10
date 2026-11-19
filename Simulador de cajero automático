@@ -1,0 +1,62 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double saldo = 1000;
+    double cantidad;
+    int opcion;
+
+    do {
+        cout << "\n===== CAJERO AUTOMATICO =====\n";
+        cout << "1. Consultar saldo\n";
+        cout << "2. Depositar\n";
+        cout << "3. Retirar\n";
+        cout << "4. Salir\n";
+        cout << "Elige una opcion: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                cout << fixed << setprecision(2);
+                cout << "Saldo actual: $" << saldo << endl;
+                break;
+
+            case 2:
+                cout << "Cantidad a depositar: $";
+                cin >> cantidad;
+
+                if (cantidad > 0) {
+                    saldo += cantidad;
+                    cout << "Deposito realizado.\n";
+                } else {
+                    cout << "Cantidad no valida.\n";
+                }
+                break;
+
+            case 3:
+                cout << "Cantidad a retirar: $";
+                cin >> cantidad;
+
+                if (cantidad <= 0) {
+                    cout << "Cantidad no valida.\n";
+                } else if (cantidad > saldo) {
+                    cout << "Saldo insuficiente.\n";
+                } else {
+                    saldo -= cantidad;
+                    cout << "Retiro realizado.\n";
+                }
+                break;
+
+            case 4:
+                cout << "Gracias por utilizar el cajero.\n";
+                break;
+
+            default:
+                cout << "Opcion no valida.\n";
+        }
+
+    } while (opcion != 4);
+
+    return 0;
+}
