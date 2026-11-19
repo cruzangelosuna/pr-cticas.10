@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int inicio, fin, suma = 0;
+
+    cout << "Ingresa el inicio del rango: ";
+    cin >> inicio;
+
+    cout << "Ingresa el final del rango: ";
+    cin >> fin;
+
+    if (inicio > fin) {
+        cout << "Rango no valido.\n";
+        return 0;
+    }
+
+    for (int i = inicio; i <= fin; i++) {
+        suma += i;
+    }
+
+    cout << "La suma del rango es: "
+         << suma << endl;
+
+    return 0;
+}
