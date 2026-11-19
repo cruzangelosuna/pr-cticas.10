@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int limite;
+
+    cout << "Hasta que numero deseas contar? ";
+    cin >> limite;
+
+    if (limite < 1) {
+        cout << "Ingresa un numero mayor que cero.\n";
+    } else {
+        for (int i = 1; i <= limite; i++) {
+            cout << i << " ";
+        }
+    }
+
+    cout << endl;
+    return 0;
+}
