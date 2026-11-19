@@ -1,0 +1,48 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    int cantidadProductos;
+    double precio, subtotal = 0, pago;
+
+    cout << "Cuantos productos vas a registrar? ";
+    cin >> cantidadProductos;
+
+    if (cantidadProductos <= 0) {
+        cout << "Cantidad no valida.\n";
+        return 0;
+    }
+
+    for (int i = 1; i <= cantidadProductos; i++) {
+        int cantidad;
+
+        cout << "\nProducto " << i << " - precio: $";
+        cin >> precio;
+
+        cout << "Cantidad: ";
+        cin >> cantidad;
+
+        if (precio < 0 || cantidad <= 0) {
+            cout << "Datos no validos.\n";
+            return 0;
+        }
+
+        subtotal += precio * cantidad;
+    }
+
+    cout << fixed << setprecision(2);
+    cout << "\nTotal a pagar: $" << subtotal << endl;
+
+    cout << "Pago del cliente: $";
+    cin >> pago;
+
+    if (pago < subtotal) {
+        cout << "Pago insuficiente. Faltan $"
+             << subtotal - pago << endl;
+    } else {
+        cout << "Cambio: $" << pago - subtotal << endl;
+    }
+
+    return 0;
+}
